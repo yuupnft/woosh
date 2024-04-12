@@ -5,14 +5,30 @@
   color: #000000;
   font-family: sans-serif;
   z-index: 1000;
+  --angle: 0deg;
+  border-top: 10px solid;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 150px;
-  margin: 0 200px;
+  height: 100px;
+  margin: 0 50px;
 }
 
 .logo {
@@ -45,7 +61,7 @@
 
 .nav_item img {
   width: 32px;
-  filter: drop-shadow(0 1px 1px #000000);
+  filter: drop-shadow(0 1px 1px #361a0c);
 }
 
 .nav_item:first-child {
@@ -68,13 +84,13 @@
 
 @media (max-width: 1100px) {
   .container {
-    margin: 0 100px;
+    margin: 0 50px;
   }
 }
 
 @media (max-width: 1100px) {
   .container {
-    margin: 0 100px;
+    margin: 0 50px;
   }
 }
 
